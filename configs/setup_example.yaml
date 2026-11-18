@@ -1,0 +1,24 @@
+# Example setup for `kcadapt arms --setup configs/setup_example.yaml --out configs/generated`.
+# Paths are placeholders. KIM, LDAPS and checkpoints stay on the internal system; never commit them.
+input_variables: [u10m, v10m, t2m, msl, z500, t850]
+output_variables: [u10m, v10m, t2m]
+invariant_variables: [orog, lsm]
+stats: /data/corrdiff/stats_era5.json          # statistics of the pretrained model (ERA5-like inputs)
+stats_kim: /data/corrdiff/stats_kim.json       # from `kcadapt renorm` (arm C)
+reg_ckpt: /data/corrdiff/checkpoints/regression.mdlus
+res_ckpt: /data/corrdiff/checkpoints/diffusion.mdlus
+data:                                          # evaluation period, hrrr_mini layout (kcadapt export)
+  R: /data/corrdiff/eval_era5.nc
+  A: /data/corrdiff/eval_kim.nc
+  B: /data/corrdiff/eval_kim_qm.nc
+  C: /data/corrdiff/eval_kim.nc
+  D: /data/corrdiff/eval_kim.nc
+times: ["2025-04-11T12:00:00", "2025-04-11T18:00:00", "2025-04-12T00:00:00"]
+finetune_data: /data/corrdiff/train_kim.nc     # (KIM input, target) pairs, training years only
+finetune_ckpt_dir: /data/corrdiff/checkpoints_finetune
+reg_ckpt_finetuned: ""                         # fill in after arm D training, then rerun `kcadapt arms`
+pretrained_nimg: 0                             # samples seen by the pretrained regression net (check its log)
+finetune_nimg: 2000000
+finetune_lr: 2.0e-5
+num_ensembles: 32
+patched: false

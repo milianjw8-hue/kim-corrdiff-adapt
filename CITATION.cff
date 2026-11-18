@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "kim-corrdiff-adapt (kcadapt): adapting a CorrDiff downscaling model from ERA5-like to KIM inputs"
+type: software
+authors:
+  - family-names: Cha
+    given-names: Joo Wan
+version: 0.1.0
+date-released: 2026-11-18
+license: MIT
+repository-code: "https://github.com/milianjw8-hue/kim-corrdiff-adapt"
+keywords:
+  - CorrDiff
+  - downscaling
+  - domain adaptation
+  - quantile mapping
+  - KIM

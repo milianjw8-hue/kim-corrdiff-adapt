@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kcadapt"
+version = "0.1.0"
+description = "Adapt a CorrDiff downscaling model trained on ERA5-like inputs to KIM inputs: input-shift diagnosis, quantile mapping, normalization statistics, data export and experiment configs"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Joo Wan Cha" }]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "xarray>=2023.1", "netCDF4>=1.6", "pyyaml>=6.0", "matplotlib>=3.7"]
+keywords = ["CorrDiff", "downscaling", "domain adaptation", "quantile mapping", "KIM", "Korea"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+kcadapt = "kcadapt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
