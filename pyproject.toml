@@ -10,7 +10,7 @@ readme = "README.md"
 license = { text = "MIT" }
 authors = [{ name = "Joo Wan Cha" }]
 requires-python = ">=3.10"
-dependencies = ["numpy>=1.24", "pandas>=2.0", "xarray>=2023.1", "netCDF4>=1.6", "pyyaml>=6.0", "matplotlib>=3.7"]
+dependencies = ["numpy>=1.24", "pandas>=2.0", "xarray>=2023.1", "netCDF4>=1.6", "scipy>=1.10", "pyyaml>=6.0", "matplotlib>=3.7"]
 keywords = ["CorrDiff", "downscaling", "domain adaptation", "quantile mapping", "KIM", "Korea"]
 classifiers = [
   "Programming Language :: Python :: 3",
